@@ -5,61 +5,124 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.content.Context;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class LendActivity extends AppCompatActivity {
 
-    private Button btn_recycle, btn_first_aid, btn_battery, btn_count, btn_umbrella;
+    private String TAG = LendActivity.class.getSimpleName();
+
+    private GridView gridview = null;
+    private GridViewAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lend);
 
-        btn_recycle = findViewById(R.id.btn_recycle);
-        btn_first_aid = findViewById(R.id.btn_first_aid);
-        btn_battery = findViewById(R.id.btn_battery);
-        btn_count = findViewById(R.id.btn_count);
-        btn_umbrella = findViewById(R.id.btn_umbrella);
+        gridview = (GridView) findViewById(R.id.gridview);
+        adapter = new GridViewAdapter();
 
-        btn_recycle.setOnClickListener(new View.OnClickListener() {
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LendActivity.this, RecycleActivity.class);
-                startActivity(intent); // 화면 전환
+            public void onItemClick(AdapterView<?> adapterView, android.view.View view, int position, long id) {
+                if(id==0){
+                    Intent intent = new Intent(LendActivity.this, RecycleActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==1){
+                    Intent intent = new Intent(LendActivity.this, FirstaidActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==2){
+                    Intent intent = new Intent(LendActivity.this, BatteryActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==3){
+                    Intent intent = new Intent(LendActivity.this, CountActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==4){
+                    Intent intent = new Intent(LendActivity.this, UmbrellaActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(LendActivity.this, CountActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
-        btn_first_aid.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LendActivity.this, FirstaidActivity.class);
-                startActivity(intent); // 화면 전환
-            }
-        });
+        //Adapter 안에 아이템의 정보 담기
+        adapter.addItem(new ItemInfo("일회용품", R.drawable.recycle2));
+        adapter.addItem(new ItemInfo( "구급약품", R.drawable.first_aid2));
+        adapter.addItem(new ItemInfo( "보조 배터리", R.drawable.battery1));
+        adapter.addItem(new ItemInfo( "공학용 계산기", R.drawable.count1));
+        adapter.addItem(new ItemInfo( "우산", R.drawable.umbrella1));
+        adapter.addItem(new ItemInfo( "물품 추가", R.drawable.add1));
 
-        btn_battery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LendActivity.this, BatteryActivity.class);
-                startActivity(intent); // 화면 전환
-            }
-        });
+        //그리드뷰에 Adapter 설정
+        gridview.setAdapter(adapter);
 
-        btn_count.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LendActivity.this, CountActivity.class);
-                startActivity(intent); // 화면 전환
-            }
-        });
-
-        btn_umbrella.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LendActivity.this, UmbrellaActivity.class);
-                startActivity(intent); // 화면 전환
-            }
-        });
     }
+
+
+    /* 그리드뷰 어댑터 */
+    class GridViewAdapter extends BaseAdapter {
+        ArrayList<ItemInfo> items = new ArrayList<ItemInfo>();
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        public void addItem(ItemInfo item) {
+            items.add(item);
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup viewGroup) {
+            final Context context = viewGroup.getContext();
+            final ItemInfo ItemInfo = items.get(position);
+
+            if(convertView == null) {
+                LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = inflater.inflate(R.layout.gridview_list_item, viewGroup, false);
+
+                TextView tv_name = (TextView) convertView.findViewById(R.id.tv_name);
+                ImageView iv_icon = (ImageView) convertView.findViewById(R.id.iv_icon);
+
+                tv_name.setText(ItemInfo.getName());
+                iv_icon.setImageResource(ItemInfo.getResId());
+                Log.d(TAG, "getView() - [ "+position+" ] "+ItemInfo.getName());
+
+            } else {
+                View view = new View(context);
+                view = (View) convertView;
+            }
+
+            return convertView;  //뷰 객체 반환
+
+        }
+    }
+
 }
