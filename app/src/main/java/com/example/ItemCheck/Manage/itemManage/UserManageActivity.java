@@ -72,7 +72,7 @@ public class UserManageActivity extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<UserAdminResponseDto> call, Throwable t) {
-                Toast.makeText(UserManageActivity.this, "통신에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(UserManageActivity.this, "통신에 실패하였습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -96,8 +96,6 @@ public class UserManageActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             //String s = response.body().getUserData().getUser().get(1).getName();
                             Toast.makeText(UserManageActivity.this, " 회원님이 성공적으로 등록되었습니다.", Toast.LENGTH_SHORT).show();
-                            listItemAdapter.addItem(new ListItem(str1, str2, str3));
-                            listItemAdapter.notifyDataSetChanged();
                         }
                         // response 400~500 (에러 발생)
                         else {
@@ -116,12 +114,14 @@ public class UserManageActivity extends AppCompatActivity {
                     // 통신 실패
                     @Override
                     public void onFailure(Call<UserAdminResponseDto> call, Throwable t) {
+                        System.out.println("t = " + t);
                         Toast.makeText(UserManageActivity.this, "통신에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                         Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, "로그인 통신 실패!");
                     }
                 });
                 // Apapter 추가
-
+                listItemAdapter.addItem(new ListItem(str1, str2, str3));
+                listItemAdapter.notifyDataSetChanged();
                 edt1.setText("");
                 edt2.setText("");
                 edt3.setText("");
@@ -141,9 +141,11 @@ public class UserManageActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         String s = response.body();
+                        System.out.println("s = " + s);
                     }
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
+                        System.out.println(t.getMessage());
                         Toast.makeText(UserManageActivity.this, "통신에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });

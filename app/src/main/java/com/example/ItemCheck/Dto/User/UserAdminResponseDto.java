@@ -2,6 +2,7 @@ package com.example.ItemCheck.Dto.User;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserAdminResponseDto {
@@ -44,13 +45,13 @@ public class UserAdminResponseDto {
 
     public class UserData {
         @SerializedName("data")
-        private List<User> user;
+        private ArrayList<User> user;
 
-        public void setUser(List<User> user) {
+        public void setUser(ArrayList<User> user) {
             this.user = user;
         }
 
-        public List<User> getUser() {
+        public ArrayList<User> getUser() {
             return user;
         }
 
