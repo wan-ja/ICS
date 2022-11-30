@@ -17,7 +17,6 @@
         android:background="@drawable/round_text"
         android:ems="10"
         android:hint="학번을 입력하세요."
-        android:inputType="number"
         android:textColorHint="#040404"
         app:layout_constraintBottom_toTopOf="@+id/et_pass"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,4 +96,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iV" />
+
+    <Button
+        android:id="@+id/btn_manage"
+        android:layout_width="57dp"
+        android:layout_height="79dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

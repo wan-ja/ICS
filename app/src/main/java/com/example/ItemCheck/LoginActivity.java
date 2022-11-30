@@ -6,11 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import com.example.ItemCheck.Manage.LendcorrectActivity;
+import com.example.ItemCheck.User.LendActivity;
+import com.example.ItemCheck.User.ViolateActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button btn1, btn2, btn3;
+    private Button btn1, btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,21 +22,22 @@ public class LoginActivity extends AppCompatActivity {
 
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
-        btn3 = findViewById(R.id.btn3);
 
-        btn2.setOnClickListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, LendActivity.class);
                 startActivity(intent); // 화면 전환
             }
         });
-        btn3.setOnClickListener(new View.OnClickListener() {
+
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, ViolateActivity.class);
+                Intent intent = new Intent(LoginActivity.this, LendcorrectActivity.class);
                 startActivity(intent); // 화면 전환
             }
         });
     }
 }
+

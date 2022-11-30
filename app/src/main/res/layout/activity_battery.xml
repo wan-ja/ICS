@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BatteryActivity">
+    tools:context=".User.BatteryActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -78,6 +78,7 @@
         app:layout_constraintEnd_toEndOf="@+id/iVgreen6"
         app:layout_constraintStart_toStartOf="@+id/iVgreen6"
         app:layout_constraintTop_toBottomOf="@+id/iVgreen6" />
+
 
     <ImageView
         android:id="@+id/imageView11"
