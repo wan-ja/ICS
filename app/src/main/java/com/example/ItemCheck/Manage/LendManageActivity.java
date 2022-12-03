@@ -45,38 +45,29 @@ public class LendManageActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, android.view.View view, int position, long id) {
                 if(id==0){
-                    Intent intent = new Intent(LendManageActivity.this, RecycleManageActivity.class);
-                    startActivity(intent);
-                }
-                else if(id==1){
-                    Intent intent = new Intent(LendManageActivity.this, FirstaidManageActivity.class);
-                    startActivity(intent);
-                }
-                else if(id==2){
                     Intent intent = new Intent(LendManageActivity.this, BatteryManageActivity.class);
                     startActivity(intent);
                 }
-                else if(id==3){
+                else if(id==1){
                     Intent intent = new Intent(LendManageActivity.this, CountManageActivity.class);
                     startActivity(intent);
                 }
-                else if(id==4){
+                else if(id==2){
                     Intent intent = new Intent(LendManageActivity.this, UmbrellaManageActivity.class);
                     startActivity(intent);
                 }
-                else {
-                    Intent intent = new Intent(LendManageActivity.this, CountActivity.class);
+                else{
+                    Intent intent = new Intent(LendManageActivity.this, AddActivity.class);
                     startActivity(intent);
                 }
             }
         });
 
         //Adapter 안에 아이템의 정보 담기
-        adapter.addItem(new ItemInfo("일회용품", R.drawable.recycle2));
-        adapter.addItem(new ItemInfo( "구급약품", R.drawable.first_aid2));
         adapter.addItem(new ItemInfo( "보조 배터리", R.drawable.battery1));
         adapter.addItem(new ItemInfo( "공학용 계산기", R.drawable.count1));
         adapter.addItem(new ItemInfo( "우산", R.drawable.umbrella1));
+        adapter.addItem(new ItemInfo("추가된 물품", R.drawable.add1));
 
         //그리드뷰에 Adapter 설정
         gridview.setAdapter(adapter);
