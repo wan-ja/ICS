@@ -1,4 +1,4 @@
-package com.example.ItemCheck.Manage.itemManage;
+package com.example.ItemCheck.Manage.userManage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,8 +21,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

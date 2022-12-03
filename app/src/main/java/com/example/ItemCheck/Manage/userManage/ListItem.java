@@ -1,4 +1,4 @@
-package com.example.ItemCheck.Manage.itemManage;
+package com.example.ItemCheck.Manage.userManage;
 
 public class ListItem {
     private String num;

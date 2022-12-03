@@ -16,14 +16,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Manage.itemManage.UserManageActivity"
+            android:name=".Manage.userManage.UserManageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Manage.SubList1Activity"
+            android:name=".Manage.itemManage.SubList1Activity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -58,7 +58,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Manage.LendcorrectActivity"
+            android:name=".Manage.itemManage.LendcorrectActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

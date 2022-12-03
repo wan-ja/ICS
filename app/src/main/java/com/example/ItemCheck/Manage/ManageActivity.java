@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.ItemCheck.Manage.itemManage.UserManageActivity;
+import com.example.ItemCheck.Manage.itemManage.LendcorrectActivity;
+import com.example.ItemCheck.Manage.userManage.UserManageActivity;
 import com.example.ItemCheck.R;
 
 public class ManageActivity extends AppCompatActivity {

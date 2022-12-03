@@ -7,9 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.ItemCheck.Manage.LendcorrectActivity;
+import com.example.ItemCheck.Manage.itemManage.LendcorrectActivity;
 import com.example.ItemCheck.User.LendActivity;
-import com.example.ItemCheck.User.ViolateActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

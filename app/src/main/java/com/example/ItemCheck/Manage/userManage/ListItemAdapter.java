@@ -1,4 +1,4 @@
-package com.example.ItemCheck.Manage.itemManage;
+package com.example.ItemCheck.Manage.userManage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
