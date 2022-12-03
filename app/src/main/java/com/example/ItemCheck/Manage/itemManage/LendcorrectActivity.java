@@ -85,6 +85,7 @@ public class LendcorrectActivity extends AppCompatActivity {
         });
 
         final EditText edt1 = (EditText) findViewById(R.id.edt1);
+        final EditText edt2 = (EditText) findViewById(R.id.edt2);
 
         /*
         [[ 물품 추가 버튼 클릭 ]]
@@ -93,7 +94,7 @@ public class LendcorrectActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String itemName = edt1.getText().toString();
-                String itemDetailName;
+                String itemDetailName = edt2.getText().toString();
                 Used isRental;
                 ItemRequestDto itemRequestDto = new ItemRequestDto(itemName, itemDetailName, isRental);
                 retrofitAPI.createItem(itemRequestDto).enqueue(new Callback<ItemSuccessResponseDto>() {

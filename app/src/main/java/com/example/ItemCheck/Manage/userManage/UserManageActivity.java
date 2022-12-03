@@ -1,6 +1,7 @@
 package com.example.ItemCheck.Manage.userManage;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,7 @@ public class UserManageActivity extends AppCompatActivity {
     ListView listView;
     Button btnAdd;
     ListItemAdapter listItemAdapter;
+    private SwipeRefreshLayout mysrl;
     EditText edt1, edt2, edt3;
 
     @Override
@@ -52,6 +54,17 @@ public class UserManageActivity extends AppCompatActivity {
         final EditText edt1 = (EditText) findViewById(R.id.edt1);
         final EditText edt2 = (EditText) findViewById(R.id.edt2);
         final EditText edt3 = (EditText) findViewById(R.id.edt3);
+
+        mysrl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // 새로고침시 동작
+                listItemAdapter.notifyDataSetChanged();
+
+                // 종료
+                mysrl.setRefreshing(false);
+            }
+        });
 
         /*
         [[ user 받아오기 및 화면 출력 ]]

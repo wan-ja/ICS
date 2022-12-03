@@ -49,16 +49,6 @@
             android:text="추가" />
 
         <Button
-            android:id="@+id/btnDel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="0.5"
-            android:background="@drawable/round_button"
-            android:text="삭제"/>
-
-        <Button
             android:id="@+id/btnMove"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,6 +57,24 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/round_button"
             android:text="이동" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="추가할 세부물품 입력" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     </LinearLayout>
     <ListView
         android:id="@+id/listView1"
