@@ -44,7 +44,7 @@ public interface RetrofitAPI {
     Call<ItemResponseDto> getItems();
 
     @POST("/admin/items")
-    Call<ItemSuccessResponseDto> createItem(ItemRequestDto itemRequestDto);
+    Call<ItemSuccessResponseDto> createItem(@Body ItemRequestDto itemRequestDto);
 
     @DELETE("/admin/items/delete")
     Call<ItemSuccessResponseDto> deleteItem(@Query("itemDetailName") String itemDetailName);

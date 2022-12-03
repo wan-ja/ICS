@@ -42,6 +42,8 @@ public class UserManageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_manage);
 
+        mysrl = findViewById(R.id.content_srl);
+
         listItemAdapter = new ListItemAdapter();
         listView = (ListView) findViewById(R.id.listView1);
         btnAdd = (Button) findViewById(R.id.btnAdd);

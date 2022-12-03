@@ -64,7 +64,7 @@ public class SubList1Activity extends AppCompatActivity {
             }
         });
         listView = (ListView) findViewById(R.id.listView1);
-        btnAdd = (Button) findViewById(R.id.btnAdd);
+        //btnAdd = (Button) findViewById(R.id.btnAdd);
         btnDel = (Button) findViewById(R.id.btnDel);
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, list);
@@ -83,6 +83,7 @@ public class SubList1Activity extends AppCompatActivity {
 
         final EditText edt = (EditText) findViewById(R.id.edt1);
 
+        /*
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,6 +93,8 @@ public class SubList1Activity extends AppCompatActivity {
                 edt.setText("");
             }
         });
+
+         */
 
         /*
         [[ 물품 삭제 버튼 클릭 ]]

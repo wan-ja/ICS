@@ -156,7 +156,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Manage.ManageActivity"
+            android:name=".Manage.rentalManage.ManageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

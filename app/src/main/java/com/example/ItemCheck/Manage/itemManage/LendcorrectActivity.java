@@ -41,13 +41,13 @@ public class LendcorrectActivity extends AppCompatActivity {
     TextView textView;
     ArrayAdapter<String> adapter;
 
+    RetrofitClient retrofit = RetrofitClient.getInstance();
+    RetrofitAPI retrofitAPI = RetrofitClient.getRetrofitAPI();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lendcorrect);
-
-        RetrofitClient retrofit = RetrofitClient.getInstance();
-        RetrofitAPI retrofitAPI = RetrofitClient.getRetrofitAPI();
 
         retrofitAPI.getItemNames().enqueue(new Callback<ItemResponseDto>() {
             @Override
@@ -67,7 +67,6 @@ public class LendcorrectActivity extends AppCompatActivity {
         });
         listView = (ListView) findViewById(R.id.listView1);
         btnAdd = (Button) findViewById(R.id.btnAdd);
-        btnDel = (Button) findViewById(R.id.btnDel);
         btnMove = (Button) findViewById(R.id.btnMove);
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, list);
@@ -95,8 +94,9 @@ public class LendcorrectActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String itemName = edt1.getText().toString();
                 String itemDetailName = edt2.getText().toString();
-                Used isRental;
+                Used isRental = Used.CAN;
                 ItemRequestDto itemRequestDto = new ItemRequestDto(itemName, itemDetailName, isRental);
+
                 retrofitAPI.createItem(itemRequestDto).enqueue(new Callback<ItemSuccessResponseDto>() {
                     @Override
                     public void onResponse(Call<ItemSuccessResponseDto> call, Response<ItemSuccessResponseDto> response) {
@@ -123,25 +123,12 @@ public class LendcorrectActivity extends AppCompatActivity {
                         Toast.makeText(LendcorrectActivity.this, "통신에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
-                //list.add(str);
-                //adapter.notifyDataSetChanged();
-                edt1.setText("");
-            }
-        });
-
-        /*
-        [[ 물품 삭제 버튼 클릭 ]]
-         */
-        btnDel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int pos = listView.getCheckedItemPosition();
-                list.remove(pos);
+                list.add(itemName);
                 adapter.notifyDataSetChanged();
-                listView.clearChoices();
+                edt1.setText("");
+                edt2.setText("");
             }
         });
-
         /*
         [[ 물품 상세 창으로 이동 ]]
          */
@@ -157,5 +144,4 @@ public class LendcorrectActivity extends AppCompatActivity {
             }
         });
     }
-
 }

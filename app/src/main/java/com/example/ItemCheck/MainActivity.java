@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.ItemCheck.Dto.User.UserLoginRequestDto;
 import com.example.ItemCheck.Dto.User.UserLoginResponseDto;
-import com.example.ItemCheck.Manage.ManageActivity;
+import com.example.ItemCheck.Manage.rentalManage.ManageActivity;
 import com.example.ItemCheck.retrofit.RetrofitAPI;
 import com.example.ItemCheck.retrofit.RetrofitClient;
 
