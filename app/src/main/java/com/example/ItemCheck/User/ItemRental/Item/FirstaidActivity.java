@@ -1,25 +1,29 @@
-package com.example.ItemCheck.User;
+package com.example.ItemCheck.User.ItemRental.Item;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ItemCheck.R;
+import com.example.ItemCheck.User.ItemRental.Item.SubItem.BandActivity;
+import com.example.ItemCheck.User.ItemRental.Item.SubItem.DigestActivity;
+import com.example.ItemCheck.User.ItemRental.LendActivity;
+import com.example.ItemCheck.User.ItemRental.Item.SubItem.PainkillerActivity;
 
 import java.util.ArrayList;
 
-public class LendActivity extends AppCompatActivity {
+public class FirstaidActivity extends AppCompatActivity {
 
     private String TAG = LendActivity.class.getSimpleName();
 
@@ -29,7 +33,7 @@ public class LendActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lend);
+        setContentView(R.layout.activity_firstaid);
 
         gridview = (GridView) findViewById(R.id.gridview);
         adapter = new GridViewAdapter();
@@ -38,38 +42,27 @@ public class LendActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, android.view.View view, int position, long id) {
                 if(id==0){
-                    Intent intent = new Intent(LendActivity.this, RecycleActivity.class);
+                    Intent intent = new Intent(FirstaidActivity.this, BandActivity.class);
+                    intent.putExtra("str", adapter.items.get(0).getName());
                     startActivity(intent);
                 }
                 else if(id==1){
-                    Intent intent = new Intent(LendActivity.this, FirstaidActivity.class);
+                    Intent intent = new Intent(FirstaidActivity.this, PainkillerActivity.class);
+                    intent.putExtra("str", adapter.items.get(1).getName());
                     startActivity(intent);
                 }
                 else if(id==2){
-                    Intent intent = new Intent(LendActivity.this, BatteryActivity.class);
-                    startActivity(intent);
-                }
-                else if(id==3){
-                    Intent intent = new Intent(LendActivity.this, CountActivity.class);
-                    startActivity(intent);
-                }
-                else if(id==4){
-                    Intent intent = new Intent(LendActivity.this, UmbrellaActivity.class);
-                    startActivity(intent);
-                }
-                else {
-                    Intent intent = new Intent(LendActivity.this, CountActivity.class);
+                    Intent intent = new Intent(FirstaidActivity.this, DigestActivity.class);
+                    intent.putExtra("str", adapter.items.get(2).getName());
                     startActivity(intent);
                 }
             }
         });
 
         //Adapter 안에 아이템의 정보 담기
-        adapter.addItem(new ItemInfo("일회용품", R.drawable.recycle2));
-        adapter.addItem(new ItemInfo( "구급약품", R.drawable.first_aid2));
-        adapter.addItem(new ItemInfo( "보조 배터리", R.drawable.battery1));
-        adapter.addItem(new ItemInfo( "공학용 계산기", R.drawable.count1));
-        adapter.addItem(new ItemInfo( "우산", R.drawable.umbrella1));
+        adapter.addItem(new ItemInfo("일회용 밴드", R.drawable.band1));
+        adapter.addItem(new ItemInfo( "진통제", R.drawable.painkiller1));
+        adapter.addItem(new ItemInfo( "소화제", R.drawable.digest1));
 
         //그리드뷰에 Adapter 설정
         gridview.setAdapter(adapter);

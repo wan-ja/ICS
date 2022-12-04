@@ -16,10 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ItemCheck.R;
-import com.example.ItemCheck.User.ItemInfo;
-import com.example.ItemCheck.User.LendActivity;
-import com.example.ItemCheck.User.PasteActivity;
-import com.example.ItemCheck.User.TearActivity;
+import com.example.ItemCheck.User.ItemRental.Item.ItemInfo;
 
 import java.util.ArrayList;
 

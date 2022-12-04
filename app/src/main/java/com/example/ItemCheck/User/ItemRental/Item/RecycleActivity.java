@@ -1,4 +1,4 @@
-package com.example.ItemCheck.User;
+package com.example.ItemCheck.User.ItemRental.Item;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,10 +16,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ItemCheck.R;
+import com.example.ItemCheck.User.ItemRental.LendActivity;
+import com.example.ItemCheck.User.ItemRental.Item.SubItem.PasteActivity;
+import com.example.ItemCheck.User.ItemRental.Item.SubItem.TearActivity;
 
 import java.util.ArrayList;
 
-public class FirstaidActivity extends AppCompatActivity {
+public class RecycleActivity extends AppCompatActivity {
 
     private String TAG = LendActivity.class.getSimpleName();
 
@@ -29,7 +32,7 @@ public class FirstaidActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_firstaid);
+        setContentView(R.layout.activity_recycle);
 
         gridview = (GridView) findViewById(R.id.gridview);
         adapter = new GridViewAdapter();
@@ -38,24 +41,21 @@ public class FirstaidActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, android.view.View view, int position, long id) {
                 if(id==0){
-                    Intent intent = new Intent(FirstaidActivity.this, BandActivity.class);
+                    Intent intent = new Intent(RecycleActivity.this, TearActivity.class);
+                    intent.putExtra("str", adapter.items.get(0).getName());
                     startActivity(intent);
                 }
                 else if(id==1){
-                    Intent intent = new Intent(FirstaidActivity.this, PainkillerActivity.class);
-                    startActivity(intent);
-                }
-                else if(id==2){
-                    Intent intent = new Intent(FirstaidActivity.this, DigestActivity.class);
+                    Intent intent = new Intent(RecycleActivity.this, PasteActivity.class);
+                    intent.putExtra("str", adapter.items.get(1).getName());
                     startActivity(intent);
                 }
             }
         });
 
         //Adapter 안에 아이템의 정보 담기
-        adapter.addItem(new ItemInfo("일회용 밴드", R.drawable.band1));
-        adapter.addItem(new ItemInfo( "진통제", R.drawable.painkiller1));
-        adapter.addItem(new ItemInfo( "소화제", R.drawable.digest1));
+        adapter.addItem(new ItemInfo("인공눈물", R.drawable.tear1));
+        adapter.addItem(new ItemInfo( "일회용치약", R.drawable.paste1));
 
         //그리드뷰에 Adapter 설정
         gridview.setAdapter(adapter);

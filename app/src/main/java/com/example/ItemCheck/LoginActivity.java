@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ItemCheck.User.UsedList.CheckActivity;
-import com.example.ItemCheck.User.LendActivity;
+import com.example.ItemCheck.User.ItemRental.LendActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

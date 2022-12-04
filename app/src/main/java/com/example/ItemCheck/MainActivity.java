@@ -29,7 +29,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_login, btn_manage;
+    private Button btn_login;
     private EditText et_id, et_pass;
 
     @Override
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         et_id = findViewById(R.id.et_id);
         et_pass = findViewById(R.id.et_pass);
-        btn_manage = findViewById(R.id.btn_manage);
 
         RetrofitClient retrofit = RetrofitClient.getInstance();
         RetrofitAPI retrofitAPI = RetrofitClient.getRetrofitAPI();

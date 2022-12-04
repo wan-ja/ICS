@@ -1,25 +1,32 @@
-package com.example.ItemCheck.User;
+package com.example.ItemCheck.User.ItemRental;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ItemCheck.R;
+import com.example.ItemCheck.User.ItemRental.Item.AddedActivity;
+import com.example.ItemCheck.User.ItemRental.Item.BatteryActivity;
+import com.example.ItemCheck.User.ItemRental.Item.CountActivity;
+import com.example.ItemCheck.User.ItemRental.Item.FirstaidActivity;
+import com.example.ItemCheck.User.ItemRental.Item.ItemInfo;
+import com.example.ItemCheck.User.ItemRental.Item.RecycleActivity;
+import com.example.ItemCheck.User.ItemRental.Item.UmbrellaActivity;
 
 import java.util.ArrayList;
 
-public class RecycleActivity extends AppCompatActivity {
+public class LendActivity extends AppCompatActivity {
 
     private String TAG = LendActivity.class.getSimpleName();
 
@@ -29,7 +36,7 @@ public class RecycleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycle);
+        setContentView(R.layout.activity_lend);
 
         gridview = (GridView) findViewById(R.id.gridview);
         adapter = new GridViewAdapter();
@@ -38,19 +45,42 @@ public class RecycleActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, android.view.View view, int position, long id) {
                 if(id==0){
-                    Intent intent = new Intent(RecycleActivity.this, TearActivity.class);
+                    Intent intent = new Intent(LendActivity.this, RecycleActivity.class);
                     startActivity(intent);
                 }
                 else if(id==1){
-                    Intent intent = new Intent(RecycleActivity.this, PasteActivity.class);
+                    Intent intent = new Intent(LendActivity.this, FirstaidActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==2){
+                    Intent intent = new Intent(LendActivity.this, BatteryActivity.class);
+                    intent.putExtra("str", adapter.items.get(2).getName());
+                    startActivity(intent);
+                }
+                else if(id==3){
+                    Intent intent = new Intent(LendActivity.this, CountActivity.class);
+                    intent.putExtra("str", adapter.items.get(3).getName());
+                    startActivity(intent);
+                }
+                else if(id==4){
+                    Intent intent = new Intent(LendActivity.this, UmbrellaActivity.class);
+                    intent.putExtra("str", adapter.items.get(4).getName());
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(LendActivity.this, AddedActivity.class);
                     startActivity(intent);
                 }
             }
         });
 
         //Adapter 안에 아이템의 정보 담기
-        adapter.addItem(new ItemInfo("인공눈물", R.drawable.tear1));
-        adapter.addItem(new ItemInfo( "일회용치약", R.drawable.paste1));
+        adapter.addItem(new ItemInfo("일회용품", R.drawable.recycle2));
+        adapter.addItem(new ItemInfo( "구급약품", R.drawable.first_aid2));
+        adapter.addItem(new ItemInfo( "보조 배터리", R.drawable.battery1));
+        adapter.addItem(new ItemInfo( "공학용 계산기", R.drawable.count1));
+        adapter.addItem(new ItemInfo( "우산", R.drawable.umbrella1));
+        adapter.addItem(new ItemInfo( "추가된 물품", R.drawable.add1));
 
         //그리드뷰에 Adapter 설정
         gridview.setAdapter(adapter);

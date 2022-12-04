@@ -59,19 +59,15 @@ public class ManageActivity extends AppCompatActivity {
 
 
                 if (i == true){
-                    textView.setText("○");
+                    textView.setText("X");
                     i = false;
-
-                    Intent intent = new Intent(ManageActivity.this , LoginActivity.class);
-                    intent.putExtra("str", textView.toString());
 
 
                 }else {
-                    textView.setText("X");
+                    textView.setText("○");
                     i = true;
 
-                    Intent intent = new Intent(ManageActivity.this , LoginActivity.class);
-                    intent.putExtra("str", textView.toString());
+
                 }
             }
         });

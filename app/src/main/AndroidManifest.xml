@@ -16,6 +16,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".User.ItemRental.Item.AddedActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".User.UsedList.CheckActivity"
             android:exported="false">
             <meta-data
@@ -177,70 +184,70 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.DigestActivity"
+            android:name=".User.ItemRental.Item.SubItem.DigestActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.PainkillerActivity"
+            android:name=".User.ItemRental.Item.SubItem.PainkillerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.BandActivity"
+            android:name=".User.ItemRental.Item.SubItem.BandActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.PasteActivity"
+            android:name=".User.ItemRental.Item.SubItem.PasteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.TearActivity"
+            android:name=".User.ItemRental.Item.SubItem.TearActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.UmbrellaActivity"
+            android:name=".User.ItemRental.Item.UmbrellaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.CountActivity"
+            android:name=".User.ItemRental.Item.CountActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.BatteryActivity"
+            android:name=".User.ItemRental.Item.BatteryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.FirstaidActivity"
+            android:name=".User.ItemRental.Item.FirstaidActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.RecycleActivity"
+            android:name=".User.ItemRental.Item.RecycleActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -254,7 +261,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".User.LendActivity"
+            android:name=".User.ItemRental.LendActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
