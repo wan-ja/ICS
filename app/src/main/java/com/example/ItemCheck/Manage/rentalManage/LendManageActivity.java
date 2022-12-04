@@ -1,4 +1,4 @@
-package com.example.ItemCheck.Manage;
+package com.example.ItemCheck.Manage.rentalManage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,13 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ItemCheck.R;
-import com.example.ItemCheck.User.BatteryActivity;
-import com.example.ItemCheck.User.CountActivity;
-import com.example.ItemCheck.User.FirstaidActivity;
 import com.example.ItemCheck.User.ItemInfo;
-import com.example.ItemCheck.User.LendActivity;
-import com.example.ItemCheck.User.RecycleActivity;
-import com.example.ItemCheck.User.UmbrellaActivity;
 
 import java.util.ArrayList;
 

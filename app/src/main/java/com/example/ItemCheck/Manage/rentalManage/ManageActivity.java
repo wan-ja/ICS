@@ -3,23 +3,15 @@ package com.example.ItemCheck.Manage.rentalManage;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ItemCheck.LoginActivity;
-import com.example.ItemCheck.Manage.LendManageActivity;
 import com.example.ItemCheck.Manage.itemManage.LendcorrectActivity;
 import com.example.ItemCheck.Manage.userManage.UserManageActivity;
 import com.example.ItemCheck.R;
-
-import java.io.ByteArrayOutputStream;
 
 public class ManageActivity extends AppCompatActivity {
 

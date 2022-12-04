@@ -1,4 +1,4 @@
-package com.example.ItemCheck.Manage;
+package com.example.ItemCheck.Manage.rentalManage;
 
 import androidx.appcompat.app.AppCompatActivity;
 

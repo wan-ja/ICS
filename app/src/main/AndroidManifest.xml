@@ -23,7 +23,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Manage.AddActivity"
+            android:name=".Manage.rentalManage.AddActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -86,21 +86,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Manage.UmbrellaManageActivity"
+            android:name=".Manage.rentalManage.UmbrellaManageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Manage.CountManageActivity"
+            android:name=".Manage.rentalManage.CountManageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Manage.BatteryManageActivity"
+            android:name=".Manage.rentalManage.BatteryManageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -156,7 +156,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Manage.LendManageActivity"
+            android:name=".Manage.rentalManage.LendManageActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
