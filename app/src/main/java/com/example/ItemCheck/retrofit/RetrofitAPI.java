@@ -5,6 +5,7 @@ import com.example.ItemCheck.Dto.Rental.RentalResponseDto;
 import com.example.ItemCheck.Dto.SuccessResponseDto;
 import com.example.ItemCheck.Dto.Item.ItemRequestDto;
 import com.example.ItemCheck.Dto.Item.ItemResponseDto;
+import com.example.ItemCheck.Dto.Union.UnionResponseDto;
 import com.example.ItemCheck.Dto.User.UserAdminRequestDto;
 import com.example.ItemCheck.Dto.User.UserAdminResponseDto;
 import com.example.ItemCheck.Dto.User.UserLoginRequestDto;
@@ -59,7 +60,16 @@ public interface RetrofitAPI {
     @POST("/admin/rentals/return")
     Call<SuccessResponseDto> returnRental(@Body RentalRequestDto rentalRequestDto);
 
-    @POST("users/rentals")
+    @GET("/users/rentals")
     Call<RentalResponseDto> searchRental(@Query("studentId")String studentId);
+
+    /*
+    [[ is Open ]]
+     */
+    @GET("/admin/union/change")
+    Call<UnionResponseDto> changeOpen();
+
+    @GET("/users/union")
+    Call<UnionResponseDto> getOpen();
 
 }

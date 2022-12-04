@@ -12,12 +12,12 @@ public class RentalResponseDto {
     private String code;
 
     @SerializedName("result")
-    private ItemData itemData;
+    private RentalData rentalData;
 
-    public RentalResponseDto(String success, String code, ItemData itemData) {
+    public RentalResponseDto(String success, String code, RentalData rentalData) {
         this.success = success;
         this.code = code;
-        this.itemData = itemData;
+        this.rentalData = rentalData;
     }
 
     public String getSuccess() {
@@ -36,31 +36,31 @@ public class RentalResponseDto {
         this.code = code;
     }
 
-    public ItemData getItemData() {
-        return itemData;
+    public RentalData getRentalData() {
+        return rentalData;
     }
 
-    public void setItemData(ItemData itemData) {
-        this.itemData = itemData;
+    public void setItemData(RentalData itemData) {
+        this.rentalData = itemData;
     }
 
-    public class ItemData {
+    public class RentalData {
         @SerializedName("data")
-        private ArrayList<Item> items;
+        private ArrayList<Rental> rentals;
 
-        public ItemData(ArrayList<Item> items) {
-            this.items = items;
+        public RentalData(ArrayList<Rental> rentals) {
+            this.rentals = rentals;
         }
 
-        public ArrayList<Item> getItems() {
-            return items;
+        public ArrayList<Rental> getRentals() {
+            return rentals;
         }
 
-        public void setItems(ArrayList<Item> items) {
-            this.items = items;
+        public void setRentals(ArrayList<Rental> rentals) {
+            this.rentals = rentals;
         }
 
-        public class Item {
+        public class Rental {
             @SerializedName("studentId")
             private String studentId;
 
@@ -71,13 +71,13 @@ public class RentalResponseDto {
             private String content;
 
             @SerializedName("date")
-            private String Date;
+            private String date;
 
-            public Item(String studentId, String itemDetailName, String content, String date) {
+            public Rental(String studentId, String itemDetailName, String content, String date) {
                 this.studentId = studentId;
                 this.itemDetailName = itemDetailName;
                 this.content = content;
-                Date = date;
+                this.date = date;
             }
 
             public String getStudentId() {
@@ -105,11 +105,11 @@ public class RentalResponseDto {
             }
 
             public String getDate() {
-                return Date;
+                return date;
             }
 
             public void setDate(String date) {
-                Date = date;
+                this.date = date;
             }
         }
     }
