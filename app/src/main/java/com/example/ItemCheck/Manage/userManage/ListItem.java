@@ -29,7 +29,7 @@ public class ListItem {
         this.state = state;
     }
 
-    ListItem(String num, String name, String state){
+    public ListItem(String num, String name, String state){
         this.num = num;
         this.name = name;
         this.state = state;
