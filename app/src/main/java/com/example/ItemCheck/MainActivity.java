@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 Toast.makeText(MainActivity.this, "로그인되었습니다.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                                intent.putExtra("str", studentId);
                                 startActivity(intent);
                                 MainActivity.this.finish();
                             }

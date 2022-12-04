@@ -25,6 +25,10 @@ public class LoginActivity extends AppCompatActivity {
         btn2 = findViewById(R.id.btn2);
         textView = findViewById(R.id.textView);
 
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("str");
+
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,12 +41,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, CheckActivity.class);
+                intent.putExtra("str", str);
                 startActivity(intent); // 화면 전환
             }
         });
 
-        Intent intent = getIntent();
-        String str = intent.getStringExtra("str");
+
     }
 
 }

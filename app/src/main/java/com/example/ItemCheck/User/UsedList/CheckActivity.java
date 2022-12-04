@@ -3,10 +3,12 @@ package com.example.ItemCheck.User.UsedList;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.ItemCheck.Manage.userManage.ListItem;
 import com.example.ItemCheck.Manage.userManage.ListItemAdapter;
@@ -17,6 +19,7 @@ import com.example.ItemCheck.retrofit.RetrofitClient;
 public class CheckActivity extends AppCompatActivity {
 
     ListView listView;
+    private TextView tv_sub;
     ListItemAdapter listItemAdapter;
     private SwipeRefreshLayout mysrl;
 
@@ -27,6 +30,13 @@ public class CheckActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check);
+
+        tv_sub = findViewById(R.id.tv_sub);
+
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("str"); //문자열 받기
+
+        tv_sub.setText(str);
 
         mysrl = findViewById(R.id.content_srl);
 
