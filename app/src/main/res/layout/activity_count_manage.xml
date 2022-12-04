@@ -113,13 +113,27 @@
 
     <Button
         android:id="@+id/btn_lend"
-        android:layout_width="55dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/round_button"
         android:text="대여"
         app:layout_constraintBottom_toBottomOf="@+id/edt_num"
+        app:layout_constraintEnd_toStartOf="@+id/btn_return"
+        app:layout_constraintStart_toEndOf="@+id/edt_item" />
+
+    <Button
+        android:id="@+id/btn_return"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/round_button"
+        android:text="반납"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_num"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toEndOf="@+id/edt_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
