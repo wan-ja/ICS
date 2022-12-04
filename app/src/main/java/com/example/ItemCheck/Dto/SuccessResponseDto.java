@@ -1,8 +1,8 @@
-package com.example.ItemCheck.Dto.Item;
+package com.example.ItemCheck.Dto;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ItemSuccessResponseDto {
+public class SuccessResponseDto {
     @SerializedName("success")
     private String success;
 
@@ -12,7 +12,7 @@ public class ItemSuccessResponseDto {
     @SerializedName("result")
     private ItemData itemData;
 
-    public ItemSuccessResponseDto(String success, String code, ItemData itemData) {
+    public SuccessResponseDto(String success, String code, ItemData itemData) {
         this.success = success;
         this.code = code;
         this.itemData = itemData;

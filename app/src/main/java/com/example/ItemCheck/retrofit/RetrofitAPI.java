@@ -1,6 +1,8 @@
 package com.example.ItemCheck.retrofit;
 
-import com.example.ItemCheck.Dto.Item.ItemSuccessResponseDto;
+import com.example.ItemCheck.Dto.Rental.RentalRequestDto;
+import com.example.ItemCheck.Dto.Rental.RentalResponseDto;
+import com.example.ItemCheck.Dto.SuccessResponseDto;
 import com.example.ItemCheck.Dto.Item.ItemRequestDto;
 import com.example.ItemCheck.Dto.Item.ItemResponseDto;
 import com.example.ItemCheck.Dto.User.UserAdminRequestDto;
@@ -44,8 +46,20 @@ public interface RetrofitAPI {
     Call<ItemResponseDto> getItems();
 
     @POST("/admin/items")
-    Call<ItemSuccessResponseDto> createItem(@Body ItemRequestDto itemRequestDto);
+    Call<SuccessResponseDto> createItem(@Body ItemRequestDto itemRequestDto);
 
     @DELETE("/admin/items/delete")
-    Call<ItemSuccessResponseDto> deleteItem(@Query("itemDetailName") String itemDetailName);
+    Call<SuccessResponseDto> deleteItem(@Query("itemDetailName") String itemDetailName);
+    /*
+    [[ RENTAL ]]
+     */
+    @POST("/admin/rentals")
+    Call<SuccessResponseDto> createRental(@Body RentalRequestDto rentalRequestDto);
+
+    @POST("/admin/rentals/return")
+    Call<SuccessResponseDto> returnRental(@Body RentalRequestDto rentalRequestDto);
+
+    @POST("users/rentals")
+    Call<RentalResponseDto> searchRental(@Query("studentId")String studentId);
+
 }

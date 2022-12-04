@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.ItemCheck.Dto.Item.ItemResponseDto;
-import com.example.ItemCheck.Dto.Item.ItemSuccessResponseDto;
+import com.example.ItemCheck.Dto.SuccessResponseDto;
 import com.example.ItemCheck.R;
 import com.example.ItemCheck.retrofit.RetrofitAPI;
 import com.example.ItemCheck.retrofit.RetrofitClient;
@@ -105,9 +105,9 @@ public class SubList1Activity extends AppCompatActivity {
             public void onClick(View view) {
                 int pos = listView.getCheckedItemPosition();
 
-                retrofitAPI.deleteItem(list.get(pos)).enqueue(new Callback<ItemSuccessResponseDto>() {
+                retrofitAPI.deleteItem(list.get(pos)).enqueue(new Callback<SuccessResponseDto>() {
                     @Override
-                    public void onResponse(Call<ItemSuccessResponseDto> call, Response<ItemSuccessResponseDto> response) {
+                    public void onResponse(Call<SuccessResponseDto> call, Response<SuccessResponseDto> response) {
                         if(response.isSuccessful()) {
                             list.remove(pos);
                             Toast.makeText(SubList1Activity.this, response.body().getItemData().getMessage(), Toast.LENGTH_SHORT).show();
@@ -129,7 +129,7 @@ public class SubList1Activity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<ItemSuccessResponseDto> call, Throwable t) {
+                    public void onFailure(Call<SuccessResponseDto> call, Throwable t) {
                         Toast.makeText(SubList1Activity.this, "통신에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });

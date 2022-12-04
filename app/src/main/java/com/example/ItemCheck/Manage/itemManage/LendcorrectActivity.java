@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ItemCheck.Dto.Item.ItemSuccessResponseDto;
+import com.example.ItemCheck.Dto.SuccessResponseDto;
 import com.example.ItemCheck.Dto.Item.ItemRequestDto;
 import com.example.ItemCheck.Dto.Item.ItemResponseDto;
 import com.example.ItemCheck.Dto.Item.Used;
@@ -97,9 +97,9 @@ public class LendcorrectActivity extends AppCompatActivity {
                 Used isRental = Used.CAN;
                 ItemRequestDto itemRequestDto = new ItemRequestDto(itemName, itemDetailName, isRental);
 
-                retrofitAPI.createItem(itemRequestDto).enqueue(new Callback<ItemSuccessResponseDto>() {
+                retrofitAPI.createItem(itemRequestDto).enqueue(new Callback<SuccessResponseDto>() {
                     @Override
-                    public void onResponse(Call<ItemSuccessResponseDto> call, Response<ItemSuccessResponseDto> response) {
+                    public void onResponse(Call<SuccessResponseDto> call, Response<SuccessResponseDto> response) {
                         if(response.isSuccessful()) {
                             Toast.makeText(LendcorrectActivity.this, response.body().getItemData().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -119,7 +119,7 @@ public class LendcorrectActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<ItemSuccessResponseDto> call, Throwable t) {
+                    public void onFailure(Call<SuccessResponseDto> call, Throwable t) {
                         Toast.makeText(LendcorrectActivity.this, "통신에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });

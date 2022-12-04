@@ -1,4 +1,4 @@
-package com.example.ItemCheck.User;
+package com.example.ItemCheck.User.UsedList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -11,12 +11,17 @@ import android.widget.ListView;
 import com.example.ItemCheck.Manage.userManage.ListItem;
 import com.example.ItemCheck.Manage.userManage.ListItemAdapter;
 import com.example.ItemCheck.R;
+import com.example.ItemCheck.retrofit.RetrofitAPI;
+import com.example.ItemCheck.retrofit.RetrofitClient;
 
 public class CheckActivity extends AppCompatActivity {
 
     ListView listView;
     ListItemAdapter listItemAdapter;
     private SwipeRefreshLayout mysrl;
+
+    RetrofitClient retrofit = RetrofitClient.getInstance();
+    RetrofitAPI retrofitAPI = RetrofitClient.getRetrofitAPI();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
