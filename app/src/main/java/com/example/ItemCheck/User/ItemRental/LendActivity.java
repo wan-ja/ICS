@@ -20,7 +20,6 @@ import com.example.ItemCheck.User.ItemRental.Item.AddedActivity;
 import com.example.ItemCheck.User.ItemRental.Item.BatteryActivity;
 import com.example.ItemCheck.User.ItemRental.Item.CountActivity;
 import com.example.ItemCheck.User.ItemRental.Item.FirstaidActivity;
-import com.example.ItemCheck.User.ItemRental.Item.ItemInfo;
 import com.example.ItemCheck.User.ItemRental.Item.RecycleActivity;
 import com.example.ItemCheck.User.ItemRental.Item.UmbrellaActivity;
 
@@ -77,8 +76,8 @@ public class LendActivity extends AppCompatActivity {
         //Adapter 안에 아이템의 정보 담기
         adapter.addItem(new ItemInfo("일회용품", R.drawable.recycle2));
         adapter.addItem(new ItemInfo( "구급약품", R.drawable.first_aid2));
-        adapter.addItem(new ItemInfo( "보조 배터리", R.drawable.battery1));
-        adapter.addItem(new ItemInfo( "공학용 계산기", R.drawable.count1));
+        adapter.addItem(new ItemInfo( "보조배터리", R.drawable.battery1));
+        adapter.addItem(new ItemInfo( "공학용계산기", R.drawable.count1));
         adapter.addItem(new ItemInfo( "우산", R.drawable.umbrella1));
         adapter.addItem(new ItemInfo( "추가된 물품", R.drawable.add1));
 

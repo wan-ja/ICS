@@ -43,6 +43,9 @@ public interface RetrofitAPI {
     @GET("/admin/items/itemDetailName")
     Call<ItemResponseDto> getItemDetails(@Query("itemName") String itemName);
 
+    @GET("/items/itemName")
+    Call<ItemResponseDto> getItemsByItemName(@Query("itemName")String itemName);
+
     @GET("/admin/items")
     Call<ItemResponseDto> getItems();
 

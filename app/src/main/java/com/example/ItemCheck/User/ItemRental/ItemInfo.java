@@ -1,4 +1,4 @@
-package com.example.ItemCheck.User.ItemRental.Item;
+package com.example.ItemCheck.User.ItemRental;
 
 public class ItemInfo {
     /* 아이템의 정보를 담기 위한 클래스 */

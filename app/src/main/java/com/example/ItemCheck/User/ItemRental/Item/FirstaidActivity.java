@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.ItemCheck.R;
 import com.example.ItemCheck.User.ItemRental.Item.SubItem.BandActivity;
 import com.example.ItemCheck.User.ItemRental.Item.SubItem.DigestActivity;
+import com.example.ItemCheck.User.ItemRental.ItemInfo;
 import com.example.ItemCheck.User.ItemRental.LendActivity;
 import com.example.ItemCheck.User.ItemRental.Item.SubItem.PainkillerActivity;
 
