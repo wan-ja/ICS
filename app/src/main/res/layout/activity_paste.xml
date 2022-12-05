@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.ItemRental.Item.SubItem.PasteActivity">
+    android:orientation="vertical"
+    tools:context=".User.ItemRental.Item.UmbrellaActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#40C4FF"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:textAlignment="center">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="일회용 치약"
+            android:text="일회용치약"
             android:textColor="#ffffff"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -29,84 +26,115 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/grn"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/round_green"
-        app:layout_constraintEnd_toStartOf="@+id/txt1"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-    <ImageView
         android:id="@+id/imageView13"
         android:layout_width="220dp"
         android:layout_height="213dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
         app:srcCompat="@drawable/paste1" />
 
     <TextView
-        android:id="@+id/txt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="75dp"
-        android:background="#D2D3D3"
-        android:text="대여 가능"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView13"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="109dp"
-        android:layout_height="116dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:srcCompat="@drawable/tree" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="94dp"
-        android:layout_height="85dp"
-        android:layout_marginBottom="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/conv" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="176dp"
-        android:layout_height="21dp"
-        android:layout_marginBottom="36dp"
-        android:gravity="center"
-        android:text="Ict Convenience Service"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView8" />
-
-    <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/imageView13"
-        app:layout_constraintStart_toStartOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/num"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="물품"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="세부물품"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/state"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="대여여부"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/content_srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout1"></ListView>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="104dp"
+            android:layout_height="97dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/conv" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="176dp"
+            android:layout_height="21dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Ict Convenience Service"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="109dp"
+            android:layout_height="116dp"
+            android:layout_gravity="bottom"
+            app:srcCompat="@drawable/tree" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

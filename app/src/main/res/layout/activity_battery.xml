@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="우산"
+            android:text="보조배터리"
             android:textColor="#ffffff"
             android:textSize="28sp"
             android:textStyle="bold"

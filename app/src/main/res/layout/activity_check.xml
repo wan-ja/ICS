@@ -125,7 +125,6 @@
             android:layout_gravity="bottom"
             app:srcCompat="@drawable/tree" />
 
-
     </LinearLayout>
 
 </LinearLayout>
