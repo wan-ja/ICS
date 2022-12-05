@@ -28,9 +28,5 @@ public class AddedActivity extends AppCompatActivity {
         listItemAdapter.addItem(new ListItem("책상", "책상1", "대여중"));
         listView.setAdapter(listItemAdapter);
 
-        final EditText edt1 = (EditText) findViewById(R.id.edt1);
-        final EditText edt2 = (EditText) findViewById(R.id.edt2);
-        final EditText edt3 = (EditText) findViewById(R.id.edt3);
-
     }
 }

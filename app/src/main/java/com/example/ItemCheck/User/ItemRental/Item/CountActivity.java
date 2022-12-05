@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.ItemCheck.Manage.userManage.ListItem;
+import com.example.ItemCheck.Manage.userManage.ListItemAdapter;
 import com.example.ItemCheck.R;
 
 public class CountActivity extends AppCompatActivity {
 
-    TextView textView, txt1, txt2, txt3, txt4, txt5;
+    TextView textView;
+    ListView listView;
+    ListItemAdapter listItemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +23,16 @@ public class CountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_count);
 
         textView = findViewById(R.id.textView);
-        txt1 = findViewById(R.id.txt1);
-        txt2 = findViewById(R.id.txt2);
-        txt3 = findViewById(R.id.txt3);
-        txt4 = findViewById(R.id.txt4);
-        txt5 = findViewById(R.id.txt5);
+        listItemAdapter = new ListItemAdapter();
+        listView = (ListView) findViewById(R.id.listView1);
+
+        listItemAdapter.addItem(new ListItem("책상", "책상1", "대여중"));
+        listView.setAdapter(listItemAdapter);
 
         Intent intent = getIntent();
         String str = intent.getStringExtra("str");
 
         textView.setText(str);
+
     }
 }
