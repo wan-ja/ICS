@@ -40,7 +40,7 @@ public class CountManageActivity extends AppCompatActivity {
 
         btn_lend = findViewById(R.id.btn_lend);
         btn_return = findViewById(R.id.btn_return);
-        edt_item = findViewById(R.id.edt_item);
+        edt_item = findViewById(R.id.txt1);
         edt_num = findViewById(R.id.edt_num);
         grn = findViewById(R.id.grn);
 

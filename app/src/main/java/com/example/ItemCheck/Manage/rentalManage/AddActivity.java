@@ -4,17 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.ItemCheck.Dto.Rental.RentalRequestDto;
 import com.example.ItemCheck.Dto.SuccessResponseDto;
-import com.example.ItemCheck.Manage.BatteryListActivity;
 import com.example.ItemCheck.R;
 import com.example.ItemCheck.retrofit.RetrofitAPI;
 import com.example.ItemCheck.retrofit.RetrofitClient;
@@ -23,7 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,7 +40,7 @@ public class AddActivity extends AppCompatActivity {
 
         btn_lend = findViewById(R.id.btn_lend);
         btn_return = findViewById(R.id.btn_return);
-        edt_item = findViewById(R.id.edt_item);
+        edt_item = findViewById(R.id.txt1);
         edt_num = findViewById(R.id.edt_num);
         grn = findViewById(R.id.grn);
 
