@@ -61,7 +61,7 @@ public class FirstaidActivity extends AppCompatActivity {
         });
 
         //Adapter 안에 아이템의 정보 담기
-        adapter.addItem(new ItemInfo("일회용 밴드", R.drawable.band1));
+        adapter.addItem(new ItemInfo("일회용밴드", R.drawable.band1));
         adapter.addItem(new ItemInfo( "진통제", R.drawable.painkiller1));
         adapter.addItem(new ItemInfo( "소화제", R.drawable.digest1));
 

@@ -48,7 +48,7 @@ public class CheckActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String str = intent.getStringExtra("str"); //문자열 받기
 
-        tv_sub.setText(str);
+        tv_sub.setText(str + " 님 환영합니다.");
 
         mysrl = findViewById(R.id.content_srl);
 

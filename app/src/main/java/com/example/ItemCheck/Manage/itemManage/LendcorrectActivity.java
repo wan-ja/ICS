@@ -1,6 +1,7 @@
 package com.example.ItemCheck.Manage.itemManage;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,6 +41,7 @@ public class LendcorrectActivity extends AppCompatActivity {
     Button btnMove;
     TextView textView;
     ArrayAdapter<String> adapter;
+    private SwipeRefreshLayout mysrl;
 
     RetrofitClient retrofit = RetrofitClient.getInstance();
     RetrofitAPI retrofitAPI = RetrofitClient.getRetrofitAPI();
@@ -48,6 +50,9 @@ public class LendcorrectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lendcorrect);
+
+        mysrl = findViewById(R.id.content_srl);
+
 
         retrofitAPI.getItemNames().enqueue(new Callback<ItemResponseDto>() {
             @Override
@@ -141,6 +146,17 @@ public class LendcorrectActivity extends AppCompatActivity {
                 Intent intent = new Intent(LendcorrectActivity.this, SubList1Activity.class);
                 intent.putExtra("str", list.get(pos)); // 다음 화면에 str 넘기기
                 startActivity(intent);
+            }
+        });
+
+        mysrl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // 새로고침시 동작
+                adapter.notifyDataSetChanged();
+
+                // 종료
+                mysrl.setRefreshing(false);
             }
         });
     }
